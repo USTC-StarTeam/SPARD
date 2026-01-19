@@ -1,0 +1,29 @@
+[Task Description]
+You are evaluating the model's instruction adherence, determining whether the response precisely meets all requirements in the user's query. This includes formatting specifications (e.g., JSON, markdown, word count), content requirements (e.g., examples, sources, structure), constraints (e.g., neutrality, language, perspective) and other explicitly stated task requirements.
+
+[Criteria]
+- Fully Adhered (5 points): The response fully complies with all explicit and implicit instructions and requirements without any deviations.
+- Strongly Adhered (4 points): The response meets all major instructions with only minor, non-impacting deviations (e.g., trivial formatting or negligible omissions).
+- Mostly Adhered (3 points): The response meets most instructions but has noticeable omissions or misunderstandings that affect secondary aspects of the task.
+- Partially Adhered (2 points): The response satisfies some core instructions but misses multiple significant requirements or misinterprets key constraints.
+- Minimally Adhered (1 point): The response attempts to follow instructions but fails to meet most key requirements; major deviations or non-compliant structure.
+- Not Adhered (0 points): The response does not meet the instructions at all or contradicts them.
+
+[Scoring Rules]
+- Provide reasons for each score by indicating specific strengths or deficiencies within the Response. Reference exact text passages to justify the score, ensuring that each reason is concrete and aligns with the criteria requirements while highlighting key gaps from the ideal answer.
+- Be very STRICT and do not be misled by format or length; ensure that the Response is thoroughly evaluated beyond superficial appearances.
+- Scoring Range: Assign an integer score between 0 to 5
+
+
+[User Query]
+{{prompt}}
+
+[Response]
+{{response}}
+
+[Output Format]
+The output should be a JSON object containing the evaluation results for the criterion.
+{
+"reason": <string>,  # A detailed rationale substantiating the judgment
+"score": <integer>   # The assigned score 
+}

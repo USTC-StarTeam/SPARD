@@ -1,0 +1,28 @@
+[Task Description]
+You are to evaluate the logical flow of the response to the user query. Focus exclusively on assessing coherence, progression of ideas, transitions, and internal consistency using the specified criteria.
+
+[Criteria]
+- Exceptionally Logical (5 points): The response presents a flawless step-by-step progression with precise and appropriate transitions. Assumptions and terminology remain consistent throughout, and there are no gaps or contradictions.
+- Very Logical (4 points): The response maintains clear overall progression with mostly explicit and correct transitions. Any missing link is trivial and easily inferred; terminology is largely consistent; and there are no substantive contradictions.
+- Mostly Logical (3 points): The response is generally coherent and the main line of reasoning is intact. A few transitions are weak or missing, small gaps require light inference, and terms may be occasionally imprecise, but conclusions mostly follow.
+- Somewhat Logical (2 points): The response contains noticeable gaps or skipped steps that hinder the flow, and transitions are sparse or sometimes misused. Minor scope drift or local inconsistency appears, and conclusions are only loosely connected to the premises.
+- Basically Logical (1 point): The response exhibits frequent jumps or conflicting statements and shifts in assumptions or definitions that reduce clarity. The reader must reconstruct substantial logic, and the overall meaning is barely recoverable.
+- Not Logical (0 points): The response is disordered or self-contradictory, and transitions are absent or invalidate relationships between ideas. Premises conflict or shift, and conclusions do not follow from the arguments.
+
+[Scoring Rules]
+- Provide reasons for each score by indicating specific strengths or deficiencies within the Response. Reference exact text passages to justify the score, ensuring that each reason is concrete and aligns with the criteria requirements while highlighting key gaps from the ideal answer.
+- Be very STRICT and do not be misled by format or length; ensure that the Response is thoroughly evaluated beyond superficial appearances.
+- Scoring Range: Assign an integer score between 0 to 5
+
+[User Query]
+{{prompt}}
+
+[Response]
+{{response}}
+
+[Output Format]
+The output should be a JSON object containing the evaluation results for the criterion, and should not contain any other text.
+{
+"reason": <string>, # A detailed rationale substantiating
+"score": <integer> # The assigned score
+}

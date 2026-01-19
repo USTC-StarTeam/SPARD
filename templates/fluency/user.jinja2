@@ -1,0 +1,27 @@
+You are to evaluate the fluency of the response to the user query. Evaluate fluency only: grammar, word choice/idiomaticity, sentence flow/cohesion, and ease of reading.
+
+[Criteria]
+- Exceptionally Fluent (5 points): Grammar is flawless. Expressions are idiomatic and precise. Sentences show natural variety and cadence. Transitions are seamless with coherent paragraph flow. Tone is consistent and appropriate. Wording is clear, concise, and elegant with no stiffness or redundancy.
+- Very Fluent (4 points): Grammar is correct. Expressions are natural and idiomatic. Flow is smooth with only slight roughness. Transitions support continuity. Tone is appropriate and stable. Minor verbosity or small stylistic slips do not disrupt reading.
+- Mostly Fluent (3 points): Generally natural and easy to follow. Some awkward collocations or minor style bumps appear. Sentence variety and pacing are adequate. Transitions mostly work. Occasional redundancy or stiffness may appear but readability remains good.
+- Fairly Fluent (2 points): Repeated awkward or literal phrasing. Choppy rhythm or abrupt jumps between ideas. Weak or missing transitions. Overreliance on simple or repetitive structures. Tone wavers. Reader must exert effort though meaning is still clear.
+- Basically Fluent (1 point): Stilted or formulaic expression. Frequent repetition and poor sentence variety. Pacing is uneven and clarity suffers. Transitions are scarce. Reading feels effortful yet the main idea can be recovered.
+- Not Fluent (0 points): Expression is highly unnatural. Flow is broken and ideas are poorly connected. Tone and register are inconsistent. Comprehension is difficult or unreliable.
+
+[Scoring Rules]
+- Provide reasons for each score by indicating specific strengths or deficiencies within the Response. Reference exact text passages to justify the score, ensuring that each reason is concrete and aligns with the criteria requirements while highlighting key gaps from the ideal answer.
+- Be very STRICT and do not be misled by format or length; ensure that the Response is thoroughly evaluated beyond superficial appearances.
+- Scoring Range: Assign an integer score between 0 to 5
+
+[User Query]
+{{prompt}}
+
+[Response]
+{{response}}
+
+[Output Format]
+The output should be a JSON object containing the evaluation results for the criterion, and should not contain any other text.
+{
+"reason": <string>,  # A detailed rationale substantiating
+"score": <integer>   # The assigned score
+}

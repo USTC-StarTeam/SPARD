@@ -1,0 +1,29 @@
+[Task Description]
+You are an evaluator assessing the relevance of the response to the user’s query. Your task is to determine how closely the response aligns with the core topic of the query. Focus exclusively on whether the response directly addresses the subject matter of the query without introducing significant off-topic content.
+
+
+[Criteria]
+- Highly Relevant (5 points): The response directly addresses the core topic and all key facets of the query, maintains strict topical focus throughout, includes only concise and necessary context, covers each core facet in multi-part queries, and, when clarification is essential, asks a clarifying question that is narrowly tied to the topic.
+- Mostly Relevant (4 points): The response remains strongly focused on the topic with only minor tangents or a small missed facet, presents background details that are concise and non-distracting, and clearly centers the user’s subject.
+- Generally Relevant (3 points): The response addresses the main topic but contains noticeable unnecessary material or only partial coverage of important facets, and some content is loosely connected or generic in ways that do not advance the user’s subject.
+- Partially Relevant (2 points): The response mixes on-topic and off-topic content, emphasizes adjacent or secondary issues while neglecting what was asked, or answers a related but different question by including filler that does not aid topical focus.
+- Minimally Relevant (1 point): The response shows only a superficial connection to the query by repeating keywords or giving broad definitions, leaves major facets unaddressed, and includes large portions that are generic or unrelated.
+- Not Relevant (0 points): The response does not engage the user’s subject or intent at all, answers a different task or domain, or consists of pure meta-chatter, and when refusal is appropriate for safety it is still scored based on how clearly it references the user’s topic.
+
+[Scoring Rules]
+- Provide reasons for each score by indicating specific strengths or deficiencies within the Response. Reference exact text passages to justify the score, ensuring that each reason is concrete and aligns with the criteria requirements while highlighting key gaps from the ideal answer.
+- Be very STRICT and do not be misled by format or length; ensure that the Response is thoroughly evaluated beyond superficial appearances.
+- Scoring Range: Assign an integer score between 0 to 5
+
+[User Query]
+{{prompt}}
+
+[Response]
+{{response}}
+
+[Output Format]
+The output should be a JSON object containing the evaluation results for the criterion, and should not contain any other text.
+{
+"reason": <string>, # A detailed rationale substantiating
+"score": <integer> # The assigned score
+}

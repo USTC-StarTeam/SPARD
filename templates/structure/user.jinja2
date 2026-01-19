@@ -1,0 +1,23 @@
+[Task Description]
+You are to evaluate the structure of the response to the user query. Focus exclusively on assessing organization, formatting, and sectional arrangement using the specified criteria.
+
+[Criteria]
+- Exceptionally Well-Structured (5 points): The response is impeccably organized with a clear hierarchy), logical sequencing, consistent formatting, and smooth transitions; structure notably enhances readability.
+- Very Well-Structured (4 points): The response is clearly organized with appropriate paragraphing, itemization, or headings; ideas are presented in an orderly sequence with only very minor issues.
+- Mostly Well-Structured (3 points): The response is generally organized but has minor structural issues .
+- Basically Structured (2 points): The response shows noticeable structural problems (e.g., rambling blocks, missing organization cues) but remains followable.
+- Poorly Structured (1 point): The response is difficult to follow due to significant disorganization, misuse of sections/bullets, or inconsistent formatting, though some structure is present.
+- Not Well-Structured (0 points): The response lacks discernible organization and is difficult to navigate.
+
+[User Query]
+{{prompt}}
+
+[Response]
+{{response}}
+
+[Output Format]
+The output should be a JSON object containing the evaluation results for the criterion, and should not contain any other text.
+{
+"reason": <string>, # A detailed rationale substantiating
+"score": <integer> # The assigned score
+}

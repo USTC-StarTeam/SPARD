@@ -1,0 +1,28 @@
+[Task Description]
+You are to evaluate the level of detail of the response to the user query. Focus exclusively on assessing coverage, specificity, necessary context, and actionable specifics using the criteria below. 
+
+[Criteria]
+- Exceptional Detail (5 points): Complete coverage of all relevant aspects; highly specific; includes necessary context, assumptions, edge cases, and clear, actionable steps/examples.
+- Very Detailed (4 points): Strong coverage with minor omissions or shallow spots; mostly specific and actionable with adequate context.
+- Adequately Detailed (3 points): Covers the main aspects but leaves notable gaps; some specifics/actionable elements present, limited context or edge cases.
+- Partially Detailed (2 points): Uneven coverage with significant gaps; description is general/vague in many places; lacks sufficient context or actionability.
+- Poorly Detailed (1 point): Minimal coverage; mostly generic statements; little to no actionable or contextual information.
+- Not Detailed (0 points): Very brief, off-topic, or lacks assessable detail.
+
+[Scoring Rules]
+- Provide reasons for each score by indicating specific strengths or deficiencies within the Response. Reference exact text passages to justify the score, ensuring that each reason is concrete and aligns with the criteria requirements while highlighting key gaps from the ideal answer.
+- Be very STRICT and do not be misled by format or length; ensure that the Response is thoroughly evaluated beyond superficial appearances.
+- Scoring Range: Assign an integer score between 0 to 5
+
+[User Query] 
+{{prompt}}
+
+[Response] 
+{{response}}
+
+[Output Format]
+The output should be a JSON object containing the evaluation results for the criterion, and should not contain any other text.
+{
+"reason": <string>,  # A detailed rationale substantiating the score
+"score": <integer>   # An integer from 0 to 5
+}

@@ -1,0 +1,43 @@
+[Task Description]
+You are an evaluator assessing the correctness of the response to a user query. Ignore fluency, style, relevance, and completeness except insofar as they affect correctness.
+
+[Criteria]
+- Fully Correct (5 points):
+    - Objective/verifiable tasks (e.g., math, code, science with a single correct result): the response fully matches the correct result implied by the problem; there are no semantic or logical errors.
+    - Open-ended factual QA: all factual statements are consistent with commonly accepted facts; there are no hallucinations, contradictions, or unverifiable claims presented as facts.
+    - Creative writing tasks (stories, poems, scripts, etc.): there are no common-sense errors or internal contradictions that undermine basic plausibility.
+
+- Strongly Correct (4 points):
+    - The response is overall correct, but contains minor inaccuracies, imprecise wording, or small omissions that do not materially affect the main correctness of the answer.
+
+- Mostly Correct (3 points):
+    - The response captures the main correct idea or result, but includes one or more noticeable errors, omissions, or misunderstandings that affect secondary aspects of the answer.
+    - For objective tasks, the main method or conclusion is mostly right but has some incorrect sub-steps or edge cases.
+    - For factual QA, most facts are correct but there are a few non-critical factual errors.
+
+- Partially Correct (2 points):
+    - The response contains a mix of correct and incorrect content, where the incorrect or missing parts significantly affect the overall correctness.
+    - The main answer or conclusion is incomplete or partly wrong, even though some relevant correct elements are present.
+
+- Minimally Correct (1 point):
+    - Only small fragments of the response are correct or relevant to the true answer.
+    - The main conclusion or core reasoning is incorrect, but there are minor correct details or partially correct steps.
+
+- Incorrect (0 points):
+    - The response is entirely or essentially incorrect.
+    - For objective/verifiable tasks, the final answer is wrong and there is no meaningful correct reasoning.
+    - For factual QA, it contains major hallucinations, contradictions, or clearly false statements with little to no correct factual content.
+    - For creative tasks, it contains severe common-sense errors or contradictions that break basic plausibility.
+
+[User Query]
+{{prompt}}
+ 
+[Response]
+{{response}}
+ 
+[Output Format]
+The output should be a JSON object containing the evaluation results for the criterion, and should not contain any other text.
+{
+  "reason": <string>,  # A detailed rationale substantiating the judgment
+  "score": <integer>   # The assigned score
+}

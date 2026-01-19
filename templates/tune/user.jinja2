@@ -1,0 +1,28 @@
+[Task Description]
+You are to evaluate the tone of the response to the user query. Focus exclusively on whether the tone is encouraging, helpful, respectful, and appropriately professional using the specified criteria.
+
+[Criteria]
+- Exceptionally Appropriate Tone (5 points): The response is consistently warm, encouraging, helpful, and respectful; it sounds empathetic and audience-appropriate while remaining professional, with no condescension or judgmental phrasing.
+- Very Appropriate Tone (4 points): The response is clearly encouraging, helpful, and respectful throughout; it is professional with only minor opportunities for added warmth or empathy, and contains no inappropriate wording.
+- Mostly Appropriate Tone (3 points): The response is generally positive and professional; there may be slight abruptness, neutral/flat affect, or uneven warmth, but it remains respectful and non-judgmental.
+- Somewhat Appropriate Tone (2 points): The response shows noticeable issues such as brusqueness, unnecessary formality, or mildly prescriptive/impersonal phrasing that hinder the overall tone, though it is not overtly negative.
+- Basically Appropriate (1 point): The response has frequent tone issues—e.g., curt or aloof language, inconsistent professionalism, or questionable word choice—so that helpfulness or respect feels inconsistent, yet it is not openly hostile.
+- Not Appropriate (0 points): The response is negative, dismissive, condescending, sarcastic, hostile, or otherwise unprofessional; it uses judgmental or offensive language or refuses help without respect.
+
+[Scoring Rules]
+- Provide reasons for each score by indicating specific strengths or deficiencies within the Response. Reference exact text passages to justify the score, ensuring that each reason is concrete and aligns with the criteria requirements while highlighting key gaps from the ideal answer.
+- Be very STRICT and do not be misled by format or length; ensure that the Response is thoroughly evaluated beyond superficial appearances.
+- Scoring Range: Assign an integer score between 0 to 5
+
+[User Query]
+{{prompt}}
+
+[Response]
+{{response}}
+
+[Output Format]
+The output should be a JSON object containing the evaluation results for the criterion, and should not contain any other text.
+{
+"reason": <string>, # A detailed rationale substantiating
+"score": <integer> # The assigned score
+}
