@@ -74,6 +74,13 @@ The released script directory is named `scirpts/` in the repository. Keep this p
 
 ## 10. Experimental Highlights
 
+![SPARD main benchmark results](docs/assets/spard-main-results.png)
+
+![SPARD ablation and model-size results](docs/assets/spard-ablation-results.png)
+
+The paper tables above show the overall benchmark comparison, core ablations, and model-size study behind the short conclusions below.
+
+
 SPARD is designed for multi-objective RL alignment where reward priorities change during training. The paper reports improvements across multiple benchmark domains by jointly adapting reward dynamics and data utility.
 
 | Backbone | Base AVG | Strongest listed baseline AVG | SPARD AVG | Readout |
@@ -111,7 +118,7 @@ The ablation study reports that removing PAWA hurts open-ended generation tasks 
 
 For paper questions, please contact:
 
-- First author: Xuyang Zhi.
+- First author: Xuyang Zhi (no verified public email found from the arXiv paper).
 - Corresponding authors: Hao Wang (`wanghao3@ustc.edu.cn`) and Enhong Chen (`cheneh@ustc.edu.cn`)
 
 For repository issues, please open a GitHub issue in this repository.
