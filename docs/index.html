@@ -149,6 +149,34 @@ export JUDGE_API_BASE=&lt;API_BASE_URL&gt;</code></pre>
 <p>The released script directory is named <code>scirpts/</code> in the repository. Keep this path unchanged unless all script references are migrated together.</p>
 <h2 id="10-experimental-highlights">10. Experimental Highlights</h2>
 <p>SPARD is designed for multi-objective RL alignment where reward priorities change during training. The paper reports improvements across multiple benchmark domains by jointly adapting reward dynamics and data utility.</p>
+<table>
+<thead><tr>
+<th>Backbone</th>
+<th style="text-align:right">Base AVG</th>
+<th style="text-align:right">Strongest listed baseline AVG</th>
+<th style="text-align:right">SPARD AVG</th>
+<th>Readout</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Qwen2.5-7B-Instruct</td>
+<td style="text-align:right">46.12</td>
+<td style="text-align:right">48.46 (GRPOavg)</td>
+<td style="text-align:right"><strong>50.03</strong></td>
+<td>SPARD improves general capability, creative writing, and chat metrics together.</td>
+</tr>
+<tr>
+<td>Qwen3-8B</td>
+<td style="text-align:right">60.56</td>
+<td style="text-align:right">62.17 (GRPOavg)</td>
+<td style="text-align:right"><strong>63.69</strong></td>
+<td>The gains persist on a stronger base model.</td>
+</tr>
+</tbody>
+</table>
+<p>The ablation study reports that removing PAWA hurts open-ended generation tasks such as Creative Writing and Chat, while GRPOavg still trails SPARD even though it outperforms scalar reward-model and implicit-reward variants.</p>
+<p><strong>Conclusion:</strong> dynamic reward weighting and data-utility pacing jointly improve multi-objective alignment stability.</p>
 <h2 id="11-notes-for-maintainers">11. Notes For Maintainers</h2>
 <ul>
 <li>Keep large training outputs and model checkpoints outside Git history.</li>

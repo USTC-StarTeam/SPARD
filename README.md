@@ -76,6 +76,15 @@ The released script directory is named `scirpts/` in the repository. Keep this p
 
 SPARD is designed for multi-objective RL alignment where reward priorities change during training. The paper reports improvements across multiple benchmark domains by jointly adapting reward dynamics and data utility.
 
+| Backbone | Base AVG | Strongest listed baseline AVG | SPARD AVG | Readout |
+| --- | ---: | ---: | ---: | --- |
+| Qwen2.5-7B-Instruct | 46.12 | 48.46 (GRPOavg) | **50.03** | SPARD improves general capability, creative writing, and chat metrics together. |
+| Qwen3-8B | 60.56 | 62.17 (GRPOavg) | **63.69** | The gains persist on a stronger base model. |
+
+The ablation study reports that removing PAWA hurts open-ended generation tasks such as Creative Writing and Chat, while GRPOavg still trails SPARD even though it outperforms scalar reward-model and implicit-reward variants.
+
+**Conclusion:** dynamic reward weighting and data-utility pacing jointly improve multi-objective alignment stability.
+
 ## 11. Notes For Maintainers
 
 - Keep large training outputs and model checkpoints outside Git history.
